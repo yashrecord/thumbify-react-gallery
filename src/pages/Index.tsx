@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import { ImageIcon, BookOpenIcon, UserIcon } from "lucide-react";
 
 const Index = () => {
   return (
