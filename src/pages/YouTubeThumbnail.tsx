@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { play } from "lucide-react";
+import { Play } from "lucide-react";  // Corrected import from 'play' to 'Play'
 
 const YouTubeThumbnail = () => {
   const [videoUrl, setVideoUrl] = useState("");
