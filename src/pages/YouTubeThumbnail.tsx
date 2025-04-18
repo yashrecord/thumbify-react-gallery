@@ -10,6 +10,7 @@ const YouTubeThumbnail = () => {
   const [videoSummary, setVideoSummary] = useState("");
   const [thumbnailStyle, setThumbnailStyle] = useState("");
   const [isGeneratingSummary, setIsGeneratingSummary] = useState(false);
+  const [isStyleGenerated, setIsStyleGenerated] = useState(false);
 
   const handleSubmitUrl = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -23,6 +24,7 @@ const YouTubeThumbnail = () => {
   const handleGenerateStyle = async () => {
     // TODO: Integrate with AI style generation
     setThumbnailStyle("Modern, vibrant thumbnail with bold typography and engaging visual hierarchy...");
+    setIsStyleGenerated(true);
   };
 
   const handleGenerateThumbnail = async () => {
@@ -103,6 +105,47 @@ const YouTubeThumbnail = () => {
               >
                 Generate Thumbnail
               </Button>
+            </div>
+          )}
+
+          {isStyleGenerated && (
+            <div className="mt-6 p-4 bg-purple-50 rounded-lg border border-purple-200">
+              <h3 className="text-lg font-semibold text-purple-800 mb-4">
+                Thumbnail Style Options
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h4 className="text-md font-medium text-purple-700 mb-2">
+                    Color Palette
+                  </h4>
+                  <div className="flex space-x-2">
+                    <div className="w-8 h-8 bg-purple-500 rounded-full"></div>
+                    <div className="w-8 h-8 bg-pink-500 rounded-full"></div>
+                    <div className="w-8 h-8 bg-blue-500 rounded-full"></div>
+                  </div>
+                </div>
+                <div className="bg-white p-4 rounded-lg shadow-sm">
+                  <h4 className="text-md font-medium text-purple-700 mb-2">
+                    Text Styles
+                  </h4>
+                  <div className="space-y-2">
+                    <div className="flex items-center">
+                      <input 
+                        type="checkbox" 
+                        className="mr-2 text-purple-600 focus:ring-purple-500" 
+                      />
+                      <span>Bold Typography</span>
+                    </div>
+                    <div className="flex items-center">
+                      <input 
+                        type="checkbox" 
+                        className="mr-2 text-purple-600 focus:ring-purple-500" 
+                      />
+                      <span>Gradient Text</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           )}
         </Card>
