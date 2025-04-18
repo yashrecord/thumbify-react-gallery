@@ -2,8 +2,11 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { FileText, Youtube } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const MainApp = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="pt-20 px-4">
       <div className="max-w-7xl mx-auto">
@@ -34,7 +37,10 @@ const MainApp = () => {
                 <p className="text-gray-600 mb-6">
                   Generate a thumbnail from an existing YouTube video URL
                 </p>
-                <Button className="bg-purple-600 hover:bg-purple-700">
+                <Button 
+                  className="bg-purple-600 hover:bg-purple-700"
+                  onClick={() => navigate("/youtube-thumbnail")}
+                >
                   Enter Video URL
                 </Button>
               </div>

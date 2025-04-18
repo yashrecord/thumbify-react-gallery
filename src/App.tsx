@@ -11,6 +11,7 @@ import MainApp from "./pages/MainApp";
 import Library from "./pages/Library";
 import About from "./pages/About";
 import NotFound from "./pages/NotFound";
+import YouTubeThumbnail from "./pages/YouTubeThumbnail";
 
 const queryClient = new QueryClient();
 
@@ -26,6 +27,7 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/login" element={<Login />} />
             <Route path="/app" element={<MainApp />} />
+            <Route path="/youtube-thumbnail" element={<YouTubeThumbnail />} />
             <Route path="/library" element={<Library />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
